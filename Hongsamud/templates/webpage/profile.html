@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Profile mark</title>
+    <script src="https://cdn.tailwindcss.com/"></script>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.css"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Karla&family=Noto+Sans+Thai:wght@300;400&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@300;400&amp;display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      body {
+        background-color: #242424;
+        font-family: "Karla", sans-serif;
+        color: #c7c7c7;
+      }
+      .font-thai {
+        font-family: "Noto Sans Thai", sans-serif;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="grid grid-cols-1 gap-32 mx-10 lg:grid-cols-3">
+      <!-- profile -->
+      <div class="flex flex-col ml-20">
+        <p style="font-size: 50px" class="pt-10 text-[#EBE9DE]">Profile</p>
+        <div class="mx-auto">
+          <div class="relative">
+            <img
+              src="https://cdn.discordapp.com/attachments/653184051506577408/1096002761579040878/profile_pic.png"
+              class="rounded-full p-10 w-50 md:w-65 max-w-xs"
+            />
+            <img
+              class="w-10 h-10 rounded-full"
+              src="/docs/images/people/profile-picture-5.jpg"
+              alt=""
+            />
+            <span
+              class="top-0 left-7 absolute w-3.5 h-3.5 bg-green-400 border-2 border-white dark:border-gray-800 rounded-full"
+            ></span>
+          </div>
+        </div>
+        <div class="">
+          <div>
+            <div class="flex items-stretch">
+              <label
+                for="first_name"
+                class="mb-2 text-sm font-medium text-gray-900 dark:text-white mr-4 self-center"
+                >User ID:</label
+              >
+              <label class="text-[#797979]">5983294259</label>
+            </div>
+          </div>
+          <div class="mt-4">
+            <div class="flex items-stretch">
+              <label
+                for="first_name"
+                class="mb-2 text-sm font-medium text-gray-900 dark:text-white mr-4 self-center"
+                >Username:</label
+              >
+              <input
+                type="text"
+                id="first_name"
+                class="bg-[#797979] bg-opacity-40 border text-white text-sm rounded-lg block p-1"
+                placeholder="jonhy8546"
+                required
+              />
+            </div>
+          </div>
+
+          <div class="mt-4 mb-4">
+            <div class="flex items-stretch">
+              <label
+                for="first_name"
+                class="mb-2 text-sm font-medium text-gray-900 dark:text-white mr-4 self-center"
+                >E-mail:</label
+              >
+              <input
+                type="text"
+                id="first_name"
+                class="bg-[#797979] bg-opacity-40 border text-white text-sm rounded-lg block p-1"
+                placeholder="jonhy8546@yahoo.com"
+                required
+              />
+            </div>
+          </div>
+        </div>
+        <div class="mt-4 flex justify-center">
+          <button class="rounded-lg bg-white text-black px-4 py-1 mr-4">
+            Edit Profile
+          </button>
+          <button class="rounded-lg bg-red-600 text-white px-4 py-1">
+            Log out
+          </button>
+        </div>
+      </div>
+      <!-- table -->
+      <div class="col-span-2">
+        <div class="flex justify-between py-10 place-items-center">
+          <p class="text-2xl xl:text-lg text-white font-thai">
+            รายการหนังสือที่ยืมไปทั้งหมด
+          </p>
+          <div class="flex items-center my-4 md:mt-2 ml-2">
+            <span class="absolute">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="w-5 h-5 mx-3 text-gray-400 dark:text-gray-600"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"
+                />
+              </svg>
+            </span>
+            <input
+              type="text"
+              placeholder="Search"
+              class="bg-[#D9D9D9] block w-full py-1.5 pr-5 text-gray-700 border border-gray-200 rounded-xl md:w-80 placeholder-gray-400/70 pl-11 rtl:pr-11 rtl:pl-5 focus:border-blue-400 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40"
+            />
+          </div>
+        </div>
+
+        <div class="overflow-x-auto my-4 md:mt-0 shadow-md sm:rounded-lg">
+          <!--Table header-->
+          <table
+            class="table-auto w-full text-bold text-left text-white dark:text-white"
+          >
+            <thead
+              class="text-xs uppercase bg-[#c9181e] text-white dark:bg-[#c9181e] dark:text-white"
+            >
+              <tr>
+                <th scope="col" class="px-6 py-3">Book ID</th>
+                <th scope="col" class="py-3">Book Name</th>
+                <th scope="col" class="px-6 py-3">Date</th>
+              </tr>
+            </thead>
+            <!--Table Body-->
+            <tbody>
+              <tr
+                class="border-transparent dark:bg-[#252525] dark:border-transparent"
+              >
+                <th
+                  scope="row"
+                  class="px-6 py-4 font-medium whitespace-nowrap dark:text-white w-3/12"
+                >
+                  64345301
+                </th>
+                <td class="py-4">Harry Potter and the Secret Chambe...</td>
+                <td class="px-6 py-4"></td>
+              </tr>
+              <tr
+                class="border-b border-transparent dark:bg-[#252525] dark:border-transparent"
+              >
+                <th
+                  scope="row"
+                  class="px-6 py-4 font-medium whitespace-nowrap dark:text-white"
+                >
+                  64345605
+                </th>
+                <td class="py-4 font-thai">มาสค์ไรเดอร์ไคซะ 913 เล่ม 1</td>
+                <td class="px-6 py-4"></td>
+              </tr>
+              <tr
+                class="border-transparent dark:bg-[#252525] dark:border-transparent"
+              >
+                <th
+                  scope="row"
+                  class="px-6 py-4 font-medium whitespace-nowrap dark:text-white"
+                >
+                  63353303
+                </th>
+                <td class="py-4 font-thai">บันทึกกันลืมของยอดนักสืบเคียวโกะ</td>
+                <td class="px-6 py-4"></td>
+              </tr>
+              <tr
+                class="border-b border-transparent dark:bg-[#252525] dark:border-transparent"
+              >
+                <th
+                  scope="row"
+                  class="px-6 py-4 font-medium whitespace-nowrap dark:text-white"
+                >
+                  35374830
+                </th>
+                <td class="py-4">The Fault in Our Stars</td>
+                <td class="px-6 py-4"></td>
+              </tr>
+            </tbody>
+
+            <!-- tfoot -->
+            <tfoot>
+              <tr
+                class="border-b border-transparent dark:bg-[#252525] dark:border-transparent"
+              >
+                <th
+                  scope="row"
+                  class="px-6 py-4 font-medium text-xl text-[#c9181e] whitespace-nowrap dark:text-[#c9181e] font-thai"
+                >
+                  ทั้งหมด 3 เล่ม
+                </th>
+              </tr>
+            </tfoot>
+          </table>
+        </div>
+      </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.js"></script>
+  </body>
+</html>

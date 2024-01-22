@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Book</title>
+</head>
+<body>
+    <form action="" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {% autoescape off %}
+        <p>
+            <label for="book-name">Book Name:</label>
+            <input type="text" name="name" autocomplete="off" required id="book-name">
+        </p>
+        <p>
+            <label for="book-author">Author:</label>
+            <input type="text" name="author" list="author-list" autocomplete="off" required id="book-author">
+            {{ data.author_list }}
+        </p>
+        <p>
+            <label for="book-publisher">Publisher:</label>
+            <input type="text" name="publisher" list="publisher-list" autocomplete="off" required id="book-publisher">
+            {{ data.publisher_list}}
+        </p>
+        <p>
+            <label for="book-category">Category:</label>
+            <select name="category" id="book-category" list=>
+            {{data.category_list}}
+            </select>
+        </p>
+        <p>
+            <label for="book-genre">Genre:</label>
+            <select name="genre" id="book-genre">
+            {{data.genre_list}}
+            </select>
+        </p>
+        <p>
+            <label for="book-quantity">Quantity:</label>
+            <input type="number" name="quantity" min="0" required id="book-quantity">
+        </p>
+        <p>
+            <input type="button" id="upload-image" value="Upload Book Cover" onclick="document.getElementById('book-image').click();" />
+            <input type="file" id="book-image" name="image" accept="image/*" style="display: none;">
+            <label id="book-image-name"></label>
+        </p>
+        <p>
+            <label for="book-description">Description:</label>
+            <br><textarea type="text" name="description" id="book-description" autocomplete="off"></textarea>
+        </p>
+        {% endautoescape %}
+        <input type="submit" value="add">
+    </form>
+    <!-- image preview -->
+    <p>preview<br><img src="" id="book-image-preview"></p>
+    <script>
+        document.getElementById('book-image').onchange = function () { 
+            let src = URL.createObjectURL(this.files[0])
+            document.getElementById('book-image-preview').src = src 
+            document.getElementById('book-image-name').innerText = this.files[0].name
+        }
+    </script>
+</body>
+</html>

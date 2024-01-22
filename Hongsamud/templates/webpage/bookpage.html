@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Karla&family=Noto+Sans+Thai:wght@300;400&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@300;400&amp;display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      .light {
+        background: linear-gradient(
+          180.05deg,
+          rgba(255, 229, 138, 0.4) 5%,
+          rgba(0, 0, 0, 0) 20%
+        );
+        border-radius: 10px;
+        transform: rotate(-180deg);
+      }
+
+      body {
+        font-family: "Karla", sans-serif;
+        background-color: #282828;
+      }
+      .font-thai {
+        font-family: "Noto Sans Thai", sans-serif;
+      }
+    </style>
+  </head>
+  <body>
+    <!--navbar-->
+    <navbar> </navbar>
+    <!--section-->
+    <main
+      class="mx-auto xs:h-screen ms:h-screen md:h-screen lg:h-screen bg-[#282828]"
+    >
+      <div class="flex justify-between pt-8 w-full">
+        <div class="">
+          <h1 class="font-bold mb-8 md:ml-48 ml-20 text-5xl text-[#C6B792]">
+            Book Details
+          </h1>
+        </div>
+
+        <div class="mr-10 mt-5">
+          <button
+            id="editButton"
+            class="bg-[#525252] hover:bg-blue-700 text-white text-2xl py-2 px-4 rounded-full"
+          >
+            Edit
+            <i class="bi bi-pencil ml-2"></i>
+          </button>
+        </div>
+      </div>
+      <section class="flex text-white justify-center md:flex-row flex-col">
+        <!--image-->
+        <div class="flex md:w-2/3 md:justify-end justify-center">
+          <div class="relative">
+            <!--<div class="top-0 left-0 light py-2 px-16">
+              <img
+                src="https://m.media-amazon.com/images/I/51mFoFmu0EL._SX335_BO1,204,203,200_.jpg"
+                class="object-scale-down mt-4 rotate-180 rounded-xl"
+              />
+            </div>-->
+            <img
+              src="https://m.media-amazon.com/images/I/51mFoFmu0EL._SX335_BO1,204,203,200_.jpg"
+              class="object-scale-down mt-4 rounded-xl"
+              style="filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.5))"
+            />
+          </div>
+        </div>
+        <!--content-->
+        <div id="contentZone" class="flex flex-col p-20 w-full">
+          <h2 class="text-4xl font-bold mb-4 text-[#FDF2D6]">
+            <b>Harry Potter and the Chamber of Secrets</b>
+          </h2>
+
+          <div class="flex flex-row items-center mb-2">
+            <h4 class="mb-2 text-xl text-[#FDF2D6] mr-4">
+              <b class="text-[#C41A20]">By</b>
+              <span class="text-[#FDF2D6]">J.K. Rowling</span>
+            </h4>
+          </div>
+
+          <div class="flex flex-row">
+            <h4 class="text-2xl font-semibold mb-2 text-[#FDF2D6]">
+              <u>Novel</u> <u>Fantasy</u>
+            </h4>
+          </div>
+          <p class="">
+            The Dursleys were so mean that hideous that summer that all Harry
+            Potter wanted was to get back to the Hogwarts School for Witchcraft
+            and Wizardry. But just as he's packing his bags, Harry receives a
+            warning from a strange, impish creature named Dobby who says that if
+            Harry Potter returns to Hogwarts, disaster will strike. And strike
+            it does. For in Harry's second year at Hogwarts, fresh torments and
+            horrors arise, including an outrageously stuck-up new professor,
+            Gilderoy Lockheart, a spirit named Moaning Myrtle who haunts the
+            girls' bathroom, and the unwanted attentions of Ron Weasley's
+            younger sister, Ginny. But each of these seem minor annoyances when
+            the real trouble begins, and someone--or something--starts turning
+            Hogwarts students to stone. Could it be Draco Malfoy, a more
+            poisonous rival than ever? Could it possibly be Hagrid, whose
+            mysterious past is finally told? Or could it be the one everyone at
+            Hogwarts most suspects...Harry Potter himself?
+          </p>
+
+          <div>
+            <p class="text-base mt-2">
+              <b class="text-[#C41A20] font-bold">Quantity</b>
+              <span class="text-[#EBE9DE] text-base font-bold ml-2"
+                ><b>4</b>
+              </span>
+            </p>
+          </div>
+        </div>
+        <!--editzone-->
+        <div id="editZone" class="flex flex-col p-20 w-full hidden">
+          <input
+            type="text"
+            id="titlebook"
+            class="mb-4 text-[#FDF2D6] text-4xl bg-[#797979] rounded-lg border border-gray-300 placeholder-[#FDF2D6]"
+            placeholder="Harry Potter and the Chamber of Secrets"
+          />
+
+          <div class="flex flex-row items-center mb-2">
+            <h4 class="mb-2 text-xl text-[#FDF2D6] mr-4">
+              <b class="text-[#C41A20]">By</b>
+            </h4>
+            <input
+              type="text"
+              id="creator"
+              class="text-[#FDF2D6] w-fit h-full bg-[#797979] rounded-lg border border-gray-300 placeholder-[#FDF2D6]"
+              placeholder="J.K. Rowling"
+            />
+          </div>
+
+          <div class="flex flex-row">
+            <input
+              type="text"
+              id="typebook1"
+              class="text-[#FDF2D6] mb-2 text-lg bg-[#797979] rounded-lg border border-gray-300 placeholder-[#FDF2D6]"
+              placeholder="Novel"
+            />
+            <input
+              type="text"
+              id="typebook2"
+              class="text-[#FDF2D6] mb-2 ml-4 text-lg bg-[#797979] rounded-lg border border-gray-300 placeholder-[#FDF2D6]"
+              placeholder="Fantasy"
+            />
+          </div>
+
+          <textarea
+            id="description"
+            rows="4"
+            class="block w-full h-64 text-[#FDF2D6] bg-[#797979] placeholder-[#FDF2D6] rounded-lg border border-gray-300"
+            placeholder="The Dursleys were so mean that hideous that summer that all Harry
+          Potter wanted was to get back to the Hogwarts School for Witchcraft
+          and Wizardry. But just as he's packing his bags, Harry receives a
+          warning from a strange, impish creature named Dobby who says that if
+          Harry Potter returns to Hogwarts, disaster will strike. And strike
+          it does. For in Harry's second year at Hogwarts, fresh torments and
+          horrors arise, including an outrageously stuck-up new professor,
+          Gilderoy Lockheart, a spirit named Moaning Myrtle who haunts the
+          girls' bathroom, and the unwanted attentions of Ron Weasley's
+          younger sister, Ginny. But each of these seem minor annoyances when
+          the real trouble begins, and someone--or something--starts turning
+          Hogwarts students to stone. Could it be Draco Malfoy, a more
+          poisonous rival than ever? Could it possibly be Hagrid, whose
+          mysterious past is finally told? Or could it be the one everyone at
+          Hogwarts most suspects...Harry Potter himself?"
+          ></textarea>
+          <div>
+            <p class="text-base mt-2">
+              <b class="text-[#C41A20] font-bold">Quantity</b>
+              <input
+                type="text"
+                id="quantity"
+                class="text-[#FDF2D6] w-12 bg-[#797979] rounded-lg border border-gray-300 placeholder-[#FDF2D6]"
+                placeholder="4"
+              />
+            </p>
+          </div>
+          <div class="flex flex-row justify-end">
+            <button
+              id="submitButton"
+              class="bg-[#C41A20] hover:bg-blue-700 text-white text-2xl py-2 px-4 rounded-full"
+            >
+              Submit
+            </button>
+          </div>
+        </div>
+      </section>
+    </main>
+    <script>
+      // Get a reference to the button element
+      const editButton = document.getElementById("editButton");
+      const editZone = document.getElementById("editZone");
+      const contentZone = document.getElementById("contentZone");
+      let toggle = false;
+
+      const titlebook = document.getElementById("titlebook");
+      const creator = document.getElementById("creator");
+      const typebook1 = document.getElementById("typebook1");
+      const typebook2 = document.getElementById("typebook2");
+      const description = document.getElementById("description");
+      const quantity = document.getElementById("quantity");
+      const submitButton = document.getElementById("submitButton");
+
+      // Define a function to be executed when the button is clicked
+      function handleClick() {
+        // Do something here, like displaying an alert
+        if (!toggle) {
+          editZone.classList.remove("hidden");
+          contentZone.classList.add("hidden");
+          toggle = true;
+        } else {
+          editZone.classList.add("hidden");
+          contentZone.classList.remove("hidden");
+          toggle = false;
+        }
+      }
+
+      // Add an event listener to the button that calls the handleClick function when clicked
+      editButton.addEventListener("click", handleClick);
+
+      submitButton.addEventListener("click", function () {
+        document.getElementById("titlebook").innerHTML = titlebook.value;
+        document.getElementById("creator").innerHTML = creator.value;
+        document.getElementById("typebook1").innerHTML = typebook1.value;
+        document.getElementById("typebook2").innerHTML = typebook2.value;
+        document.getElementById("description").innerHTML = description.value;
+        document.getElementById("quantity").innerHTML = quantity.value;
+
+        alert("Your book has been updated!");
+
+        console.log(
+          titlebook.value,
+          creator.value,
+          typebook1.value,
+          typebook2.value,
+          description.value,
+          quantity.value
+        );
+
+        handleClick();
+      });
+    </script>
+  </body>
+</html>

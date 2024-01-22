@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+{% load static %}
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+    </head>
+    <body>
+        <div class="container">
+            <br><br><br><br><br>
+        </div>
+        <form action="/signup" method="post" style="width:100%;text-align:center">
+            {% csrf_token %}
+            <input type="text" name="username" id="username" placeholder="Name" Required>
+            <br><br>
+            <input type="text" name="lastname" id="lastname" placeholder="Surname"  Required>
+            <br><br>
+            
+            <input type="text" name="email" id="email" placeholder="Examapple@Edok.condom" Required>
+            <br><br>
+            <input type="password" name="pass1" id="pass1" placeholder="Enter you Password"  Required>
+            <br><br>
+            <input type="password" name="pass2" id="pass2" placeholder="Confirm You password"  Required>
+            <br> <br>
+            
+            </div>
+            <button type="submit">sign up</button>
+            {%for message in messages %}
+                <div class="alert alert-{{message.tag}} alert-disnissible fade show " role="alert">
+                <strong>Message:</strong> {{message}}
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times</span>
+                </button>
+            </div>
+            {%endfor%}
+
+        </form>
+        <script src="" async defer></script>
+    
+    </body>
+</html>
